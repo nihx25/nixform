@@ -3,17 +3,20 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { IconButton } from "@material-ui/core";
 import UnfoldMoreIcon from "@material-ui/icons/UnfoldMore";
 import uuid from "react-uuid";
+import { useHistory } from "react-router-dom";
 import "./template.css";
 
 import blank from "./images/blank.png";
 import party from "./images/party.png";
 import contact from "./images/contact.png";
 
-function template() {
+function Template() {
+  const history = useHistory();
   const createForm = () => {
-   const id=uuid();
-   console.log(id)
-  }
+    const id = uuid();
+
+    history.push("/form/" + id);
+  };
   return (
     <div className="template_section">
       <div className="template_top">
@@ -51,4 +54,4 @@ function template() {
   );
 }
 
-export default template;
+export default Template;
